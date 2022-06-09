@@ -1,0 +1,10 @@
+---
+# tasks file for gitclone
+- name: Cloning Prelim Exam on Ubuntu Server
+  ansible.builtin.git:
+    repo: https://github.com/jmczaens-tip/Zaens_PrelimExam.git
+    dest: /home/josie/Prelim_Zaens
+    clone: yes
+    update: yes
+    key_file: /home/sysad-josie/.ssh/id_rsa
+  when: ansible_facts['distribution'] == 'Ubuntu'
